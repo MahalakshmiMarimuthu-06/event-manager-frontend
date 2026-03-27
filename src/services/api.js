@@ -1,9 +1,11 @@
 import axios from "axios";
 
-const API = axios.create({
-  baseURL: "http://localhost:8080",
-});
+const BASE_URL = "https://event-manager-x5u1.onrender.com";
 
-export const getEvents = () => API.get("/events");
+export const getEvents = () => {
+  return axios.get(`${BASE_URL}/events`);
+};
 
-export const registerUser = (data) => API.post("/register", data);
+export const registerUser = (data) => {
+  return axios.post(`${BASE_URL}/register`, data);
+};
